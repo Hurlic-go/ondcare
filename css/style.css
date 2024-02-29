@@ -130,11 +130,13 @@ main {
     margin: 5rem 0 0 0;
 }
 section {
-	margin: 5rem 0;
-	padding: 3rem 0;
+	margin: 3rem 0;
+	padding: 3rem  10rem 0rem 10rem;
 }
 .gray-back {
 	background-color: var(--back-color);
+	margin: 3rem 10rem 5rem 10rem ;
+		padding: 3rem  10rem 3rem 10rem;
 }
 
 /*キャッチコピー
@@ -143,7 +145,7 @@ section {
     text-align: center;
 }
 .catch h2 {
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
 }
 .under {
     border-bottom: 0.4rem solid var(--base-color);
