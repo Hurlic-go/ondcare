@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OND'Care グループ体温・体調管理アプリ</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" media="all" href="css/ress.min.css" />
+<link rel="stylesheet" media="all" href="css/style.css" />
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/style.js"></script>
+	
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+    
+</head>
+<body>
+<header>    
+<div class="container">
+<div align="center"><img src="img/hurlic_logo.jpg"></div>
+<div class="row">
+    <div class="col span-12 header">
+        <h1><img src="img/logo_orange.png"  width="250" height="100" align="absbottom">  グループ体温・体調管理アプリ</h1>
+		<div class="header-box"><a href="contact.html"><span class="contact-button">お問い合わせ</span></a></div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col span-12">
+        <nav>
+          <div id="open"></div>
+          <div id="close"></div>   
+            <div id="navi">
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="index.html#1">特長</a></li>
+            <li><a href="index.html#2">ご利用シーン</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+         </ul>
+             </div>
+        </nav>
+    
+        </div>
+    </div>
+    </div>
+</header>
+   
+    <main>
+        <div class="catch">
+        <h2>お問い合わせ</h2>
+        </div>
+        
+<section id="1" class="gray-back">
+      
+<div>
+
+        <!-- contact -->
+        <section id="contact" class="ondcare-section under-section">
+          <div class="ondcare-section-wrapper">
+            <div class="ondcare-section-content">
+              <form action="https://www.ond-care.com/send.php" method="POST" id="unicom-contact-form" name="contactform" onsubmit="return check()">
+                <div class="unicom-contact-form-box">
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">法人名・団体名等</div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="belong" type="text" value=""></div>
+                  </div>
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">お名前<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="name" type="text" value=""></div>
+                  </div>
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">メールアドレス<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="email" type="text" value=""></div>
+                  </div>
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">電話番号</div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="tel" type="text" value=""></div>
+                  </div>
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">お問い合わせ件名<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left">
+                      <select name="subject">
+                        <option value="">選択してください</option>
+                        <option value="導入の相談">導入の相談</option>
+						<option value="操作方法">操作方法</option>
+                        <option value="資料請求">資料請求</option>
+                        <option value="認証コード未着">認証コードが届かない</option>
+						<option value="不具合">不具合・エラー</option>
+						<option value="退会">退会について</option>
+                        <option value="その他">その他</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="unicom-contact-form-item-single unicom-float-box">
+                    <div class="unicom-contact-form-item-single-name unicom-float-left">お問い合わせ内容<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
+                    <div class="unicom-contact-form-item-single-input unicom-float-left"><textarea name="body"></textarea><p class="alart">※ 個人情報やパスワードは記入しないでください</p></div>
+                  </div>
+                  
+
+        <div class="unicom-contact-form-action-box">
+                  <a class="unicom-contact-form-action-btn" href="javascript:void(0)" onclick="javascript: if(confirm(&quot;お問い合わせ内容を送信します。よろしいですか？&quot;)){sendContactForm();}"><input type="button" name="送信" value="送信"></a><br>
+                </div>
+                
+              </form>
+  
+              <script>
+                function sendContactForm(){
+                  // エラーをリセット
+                  $(".unicom-contact-form-error-msg").remove();
+                  $("#unicom-contact-form input, #unicom-contact-form select, #unicom-contact-form textarea").css('background-color', 'transparent');
+                  
+                  // 必須項目のnameのリスト
+                  var require_name_list = [
+                    'name',
+                    'email',
+                    'subject',
+                    'body'
+                  ];
+                  
+                  // エラーリスト(初期化)
+                  var require_name_error_list = [];
+                  
+                  // 必須項目チェック
+                  $.each(require_name_list, function(i, val){
+                    if($("#unicom-contact-form [name="+val+"]").val() == ''){
+                      $("#unicom-contact-form [name="+val+"]").css('background-color', '#FFDFDF');
+                      $("#unicom-contact-form [name="+val+"]").after("<div class='unicom-contact-form-error-msg' style='color:red;'>※必須項目を入力してください。</div>");
+                      
+                      // エラーリストに追加
+                      require_name_error_list.push(val);
+                    }
+                  });
+                  
+                  // エラーの場合、その場所までスクロール
+                  if(require_name_error_list.length > 0){
+                    var position;
+                    $.each(require_name_error_list, function(i, val){
+                      var targetPosition = $("#unicom-contact-form div.unicom-contact-form-item-single:has('[name="+val+"]')").offset().top; //div.unicom-contact-form-item-single
+                      if(typeof position === "undefined" || position > targetPosition){
+                        position = targetPosition;
+                      }
+                    });
+                    
+                    // スクロール
+                    position -= $(".unicom-section-header-nav").height() + 10; // ヘッダーナビの分差し引く
+                    $("html, body").animate({scrollTop:position}, 1000, 'easeOutExpo');
+                    
+                  // エラーがなければ送信
+                  }else{
+                    $("#unicom-contact-form").submit();
+                  }
+                  
+                }
+              </script>
+
+
+<p>〔 個人情報の取り扱いについて 〕<br>
+ご入力いただきましたお客さまの個人情報は、当社の「個人情報保護方針」に基づき以下のとおり取り扱います。<br>
+<br>
+１．利用目的<br>
+本お問い合わせへの対応にのみ利用し、それ以外の目的には利用いたしません。<br>
+<br>
+2．安全管理措置<br>
+お客様の個人情報の安全管理のため、必要かつ適切な措置を講じます。<br>
+個人情報の取扱いを委託する場合には、委託先に対し、適正な取扱い義務を課し当社の責任において監督します。<br>
+<br>
+3．第三者への提供<br>
+お問い合わせいただきました情報を、お客様の同意を頂くことなく第三者へ提供することはありません。<br>
+<br>
+4．お問合せ窓口<br>
+お客様の個人情報に関する利用目的の通知、個人情報の開示、訂正、利用停止等のお求めや、この「個人情報の取り扱いについて」に関するお問合せにつきましては、以下へご連絡ください。<br>
+<br>
+株式会社ヒューマンリライトケア<br>
+ondcare@humanrelightcare.com<br>
+<br>
+5．更新・変更<br>
+本「個人情報の取り扱いについて」は以降改訂することがあります。<br>
+その場合は、本サイト上にて公表いたします。<br>
+
+    </div>
+	</div>
+</section>
+	
+   </section>
+      <div class="row">
+    <div class="col span-12">
+        <nav>
+          <div id="open"></div>
+          <div id="close"></div>   
+            <div id="navi">
+        <ul>
+              <li>
+                <a href="https://www.ond-care.com/terms.html">利用規約</a>
+              </li>
+              <li>
+                <a href="https://www.ond-care.com/privacy.html">プライバシーポリシー</a>
+              </li>
+         </ul>
+             </div>
+        </nav>
+    <br><br>
+        </div>
+    </div>  
+    </main>
+
+    <div class="copyright">
+    <a href="https://www.humanrelightcare.com" target="_blank">Copyright 2024 Humanrelightcare Co., Ltd</a> 
+        </div>
+    <p id="pagetop"><a href="#">TOP</a></p>
+</body>
+</html>
