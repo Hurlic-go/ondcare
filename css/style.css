@@ -240,7 +240,24 @@ footer ul {
 -------------------------------------*/
 .header-box {
 	display: none;
-}	
+}
+	
+}
+/*メインコンテンツ
+-------------------------------------*/
+main {
+    margin: 3rem 0 0 0;
+}
+section {
+	margin: 3rem 0;
+	padding: 3rem  5rem 0rem 5rem;
+}
+.gray-back {
+	background-color: var(--back-color);
+	margin: 3rem 3rem 5rem 3rem ;
+		padding: 3rem  3rem 3rem 3rem;
+}
+
 /*お問い合わせ
 -------------------------------------*/
 .table th {
