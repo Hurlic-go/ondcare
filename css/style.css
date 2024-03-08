@@ -140,6 +140,12 @@ section {
 		padding: 3rem  10rem 3rem 10rem;
 }
 
+td,th,tr {
+        border-top: none;
+        border-bottom: none;
+      }
+
+
 /*キャッチコピー
 -------------------------------------*/
 .catch {
@@ -256,6 +262,10 @@ section {
 	background-color: var(--back-color);
 	margin: 3rem 3rem 5rem 3rem ;
 		padding: 3rem  2rem 3rem 2rem;
+}
+
+.url {
+word-break: break-all;
 }
 
 /*お問い合わせ
