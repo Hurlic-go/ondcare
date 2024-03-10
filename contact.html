@@ -19,10 +19,10 @@
 <body>
 <header>    
 <div class="container">
-<div align="center"><img src="img/hurlic_logo.jpg"></div>
+<div align="center"><img src="img/hurlic_logo.jpg" width="208" height="80"></div>
 <div class="row">
     <div class="col span-12 header">
-        <h1><img src="img/logo_orange.png" align="absbottom">  グループ体温・体調管理アプリ</h1>
+        <h1><img src="img/logo_orange.png" width="250" height="60" align="absbottom">  グループ体温・体調管理アプリ</h1>
         </div>
     </div>
 <div class="row">
@@ -56,6 +56,22 @@
 <section id="1" class="gray-back">
       
 <div>
+    <form action="send.php" method="POST">
+        <div>
+            <label for="name">お名前：</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div>
+            <label for="email">メールアドレス：</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div>
+            <label for="message">お問い合わせ本文</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">送信</button>
+    </form>
+</div>
 
         <!-- contact -->
         <section id="contact" class="ondcare-section under-section">
