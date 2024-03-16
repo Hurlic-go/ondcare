@@ -206,6 +206,12 @@ footer ul {
 	width: 250px;
 }
 
+.form {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
 /*コピーライト
 -------------------------------------*/
 .copyright {
