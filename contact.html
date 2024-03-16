@@ -56,124 +56,12 @@
 <section id="1" class="gray-back">
       
 <div>
-    <form action="send.php" method="POST">
-        <div>
-            <label for="name">お名前：</label>
-            <input type="text" id="name" name="name" />
-        </div>
-        <div>
-            <label for="email">メールアドレス：</label>
-            <input type="email" id="email" name="email" />
-        </div>
-        <div>
-            <label for="message">お問い合わせ本文</label>
-            <textarea id="message" name="message"></textarea>
-        </div>
-        <button type="submit">送信</button>
-    </form>
+<iframe class="form" src="https://docs.google.com/forms/d/e/1FAIpQLSe6--Ai6p_lm44rS3wLjK5l9mETfwmi-M22r8-vZp7tFapjvw/viewform?embedded=true" align="middle" width="740" height="1100" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 
-        <!-- contact -->
-        <section id="contact" class="ondcare-section under-section">
-          <div class="ondcare-section-wrapper">
-            <div class="ondcare-section-content">
-              <form action="send.php" method="POST" id="unicom-contact-form" name="contactform" onsubmit="return check()">
-                <div class="unicom-contact-form-box">
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">法人名・団体名等</div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="belong" type="text" value=""></div>
-                  </div>
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">お名前<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="name" type="text" value=""></div>
-                  </div>
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">メールアドレス<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="email" type="text" value=""></div>
-                  </div>
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">電話番号</div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left"><input name="tel" type="text" value=""></div>
-                  </div>
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">お問い合わせ件名<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left">
-                      <select name="subject">
-                        <option value="">選択してください</option>
-                        <option value="導入の相談">導入の相談</option>
-						<option value="操作方法">操作方法</option>
-                        <option value="資料請求">資料請求</option>
-                        <option value="認証コード未着">認証コードが届かない</option>
-						<option value="不具合">不具合・エラー</option>
-						<option value="退会">退会について</option>
-                        <option value="その他">その他</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="unicom-contact-form-item-single unicom-float-box">
-                    <div class="unicom-contact-form-item-single-name unicom-float-left">お問い合わせ内容<span class="unicom-contact-form-item-single-require"><font size="3" color="#ff8080"> ※ 必須</font></span></div>
-                    <div class="unicom-contact-form-item-single-input unicom-float-left"><textarea name="body"></textarea><p class="alart">※ 個人情報やパスワードは記入しないでください</p></div>
-                  </div>
-                  
-
-        <div class="unicom-contact-form-action-box">
-                  <a class="unicom-contact-form-action-btn" href="javascript:void(0)" onclick="javascript: if(confirm(&quot;お問い合わせ内容を送信します。よろしいですか？&quot;)){sendContactForm();}"><input type="button" name="送信" value="送信"></a><br>
-                </div>
-                
-              </form>
-  
-              <script>
-                function sendContactForm(){
-                  // エラーをリセット
-                  $(".unicom-contact-form-error-msg").remove();
-                  $("#unicom-contact-form input, #unicom-contact-form select, #unicom-contact-form textarea").css('background-color', 'transparent');
-                  
-                  // 必須項目のnameのリスト
-                  var require_name_list = [
-                    'name',
-                    'email',
-                    'subject',
-                    'body'
-                  ];
-                  
-                  // エラーリスト(初期化)
-                  var require_name_error_list = [];
-                  
-                  // 必須項目チェック
-                  $.each(require_name_list, function(i, val){
-                    if($("#unicom-contact-form [name="+val+"]").val() == ''){
-                      $("#unicom-contact-form [name="+val+"]").css('background-color', '#FFDFDF');
-                      $("#unicom-contact-form [name="+val+"]").after("<div class='unicom-contact-form-error-msg' style='color:red;'>※必須項目を入力してください。</div>");
-                      
-                      // エラーリストに追加
-                      require_name_error_list.push(val);
-                    }
-                  });
-                  
-                  // エラーの場合、その場所までスクロール
-                  if(require_name_error_list.length > 0){
-                    var position;
-                    $.each(require_name_error_list, function(i, val){
-                      var targetPosition = $("#unicom-contact-form div.unicom-contact-form-item-single:has('[name="+val+"]')").offset().top; //div.unicom-contact-form-item-single
-                      if(typeof position === "undefined" || position > targetPosition){
-                        position = targetPosition;
-                      }
-                    });
-                    
-                    // スクロール
-                    position -= $(".unicom-section-header-nav").height() + 10; // ヘッダーナビの分差し引く
-                    $("html, body").animate({scrollTop:position}, 1000, 'easeOutExpo');
-                    
-                  // エラーがなければ送信
-                  }else{
-                    $("#unicom-contact-form").submit();
-                  }
-                  
-                }
-              </script>
 
 
-<p>〔 個人情報の取り扱いについて 〕<br>
+<p align="middle">〔 個人情報の取り扱いについて 〕<br>
 ご入力いただきましたお客さまの個人情報は、当社の「個人情報保護方針」に基づき以下のとおり取り扱います。<br>
 <br>
 １．利用目的<br>
